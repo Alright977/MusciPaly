@@ -1,0 +1,159 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-size: cover;
+}
+ul{
+    list-style: none;
+}
+#wraper{
+    width: 100vw;
+    height: 100vh;
+    padding-top: 15vw;
+    background: rgba(0, 0, 0, .2);
+    box-sizing: border-box;
+    // 歌曲图片
+    .songImg{
+        width: 70vw;
+        height: 70vw;
+        border-radius: 50%;
+        background-color: #000;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img{
+            width: 80%;
+            height: 80%;
+            border-radius: 50%;
+        }
+    }
+
+    // 歌曲名专辑
+    .songer{
+        height: 20vh;
+        margin-top: 6vw;
+        text-align: center;
+        color: #fff;
+        h2{
+            font-weight: normal;
+            font-size: 24px;
+            margin-bottom: 3vw;
+        }
+        div{
+            font-size: 14px;
+        }
+    }
+
+    // 进度条
+    .progress{
+        display: flex;
+        height: 8vw;
+        font-size: 14px;
+        color: #fff;
+        line-height: 8vh;
+        text-align: center;
+        .startTime{
+            padding: 0 4vw;
+        }
+        // 中间条
+        .darg{
+            flex: 1 1 auto;
+            height: 8vh;
+            position: relative;
+            .bbg, .tbg{
+                width: 100%;
+                height: .6vw;
+                background-color: #fff;
+                position: absolute;
+                left: 0;
+                top: calc(50% - .3vw);
+                width: 0;
+            }
+            .bbg{
+                background: rgba(255, 255, 255, .3);
+                width: 100%;
+            }
+            .circle{
+                width: 2vw;
+                height: 2vw;
+                border: 2vw solid rgba(0, 255, 255, 0);
+                background-color: #fff;
+                background-clip: padding-box;
+                border-radius: 50%;
+                position: absolute;
+                left: -3vw;
+                top: calc(50% - 3vw);
+                z-index: 3;
+            }
+        }
+        .endTime{
+            padding: 0 4vw;
+        }
+    }
+
+    // 底部按钮
+    .control{
+        width: 100vw;
+        height: 16vw;
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        background: rgba(0, 0, 0, .5);
+        li{
+            width: 20%;
+        }
+        li:nth-child(1){
+            background: url(../image/icon-like.png) no-repeat center/30%;
+            &.liking{
+                background-image: url(../image/icon-like-solid.png);
+            }
+        }
+        li:nth-child(2){
+            background: url(../image/icon-prev.png) no-repeat center/30%;
+        }
+        li:nth-child(3){
+            background: url(../image/icon-play.png) no-repeat center/30%;
+            &.playing{
+                background-image: url(../image/icon-pause.png);
+            }
+        }
+        li:nth-child(4){
+            background: url(../image/icon-next.png) no-repeat center/30%;
+        }
+        li:nth-child(5){
+            background: url(../image/icon-list.png) no-repeat center/30%;
+        }
+    }
+
+    //弹出菜单
+    .list{
+        z-index: 4;
+        width: 100vw;
+        position: fixed;
+        bottom: 0;
+        background: linear-gradient(rgb(5,5,5),rgba(170,170,170,.95));
+        transform: translateY(300px);
+        dt,dd,.colse{
+            height: 12vw;
+            line-height: 12vw;
+            font-size: 16px;
+            color: #fff;
+            border-bottom: 1px solid rgba(255, 255, 255, .1);
+        }
+        dt,.colse{
+            text-align: center;
+        }
+        dd{
+            padding-left: 3vw;
+            &.active{
+                color: #56b287;
+            }
+        }
+        dt{
+            border-bottom: none;
+        }
+    }
+}
